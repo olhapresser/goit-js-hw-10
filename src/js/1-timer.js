@@ -32,17 +32,15 @@ flatpickr(dateTime, {
     } else {
       startBtn.disabled = false;
       userSelectedDate = selectedDates.getTime();
-      timerStart();
     }
   },
 });
 
 function timerStart() {
-    const currentTime = Date.now();
-    
   countdownInterval = setInterval(() => {
-    const startTime = userSelectedDate;
-    const diff = startTime - currentTime;
+      const startTime = userSelectedDate;
+      const currentTime = Date.now();
+      const diff = startTime - currentTime;
 
       if (diff <= 0) {
             startBtn.disabled = true;

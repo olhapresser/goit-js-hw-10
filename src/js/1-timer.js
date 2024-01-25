@@ -29,7 +29,7 @@ flatpickr(dateTime, {
   minuteIncrement: 1,
     onClose([selectedDates]) {
     if (selectedDates.getTime() < Date.now()) {
-      iziToast.show({
+      iziToast.error({
         message: 'Please choose a date in the future',
       });
     } else {
@@ -87,10 +87,10 @@ function pad(value) {
 }
 
 function updateClockFace({ days, hours, minutes, seconds }) {
-dataDays.value = days;
-  dataHours.value=hours;
-  dataMinutes.value=minutes;
-  dataSeconds.value=seconds;
+dataDays.textContent = days;
+  dataHours.textContent=hours;
+  dataMinutes.textContent=minutes;
+  dataSeconds.textContent=seconds;
 }
 
 startBtn.addEventListener('click', () => {

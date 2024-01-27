@@ -51,12 +51,17 @@ function timerStart() {
           convertMs(0);
       } else {
           
-          startBtn.disabled = false;
+          // startBtn.disabled = false;
           const time = convertMs(diff);
 
-    updateClockFace(time);
+        updateClockFace(time);
+        
       }
+    
+    startBtn.disabled = true;
+dateTime.disabled = true;
   }, 1000);
+
 }
 
 function convertMs(ms) {
@@ -95,6 +100,6 @@ dataDays.textContent = days;
 
 startBtn.addEventListener('click', () => {
     if (userSelectedDate) {
-        timerStart();
+      timerStart();
     }
 })
